@@ -14,7 +14,7 @@ Cat::Cat(const Cat &copy) : Animal(copy)
 	brain = new Brain(*copy.brain);
 }
 
-Cat Cat::operator=(const Cat &copy)
+Cat &Cat::operator=(const Cat &copy)
 {
 	std::cout << "Cat equal operator" << std::endl;
 	if (this != &copy)

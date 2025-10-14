@@ -6,7 +6,7 @@
 #    By: dario <dario@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 18:40:53 by dario             #+#    #+#              #
-#    Updated: 2025/10/06 20:28:04 by dario            ###   ########.fr        #
+#    Updated: 2025/10/14 18:42:13 by dario            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,20 @@ MAKEFLAGS	+=	--no-print-directory
 
 CC			=	g++
 CFLAGS		=	-std=c++98 -Wall -Wextra -Werror
-RM			=	rm -f
+RM			=	rm -rf
 
 VALFLAGS	=	--tool=helgrind --tool=drd
 
-SRC			=	Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+OBJ_DIR		=	obj/
+SRC_DIR		=	source/
 
-SRCS		=	main.cpp \
-				$(addprefix source/, $(SRC))
+SRCS		=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
+VPATH		=  $(SRC_DIR) $(addprefix $(SRC_DIR), \
+				source\
+				)
 
-OBJS		=	$(SRCS:.cpp=.o)
+OBJS		=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
 define SIGNATURE
       _                                 _
@@ -67,13 +70,16 @@ $(NAME): $(OBJS)
 	@echo "\n$(BG_GREEN)$(NAME) compiled!$(BG_RST)"
 	@echo "$(MAGENTA)$$SIGNATURE$(RST)"
 
-%.o: %.cpp
+$(OBJ_DIR)%.o: %.cpp $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(MAGENTA)Compiling $< ✅$(RST)\033[0K\r"
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 clean:
 	@echo "$(BG_BLUE)Cleaning...$(BG_RST)"
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJ_DIR)
 	@echo "$(CYAN)$(NAME) objs cleaned!$(BG_RST)🧹"
 
 fclean: clean
