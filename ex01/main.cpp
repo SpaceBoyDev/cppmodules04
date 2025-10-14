@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 22:57:17 by dario             #+#    #+#             */
-/*   Updated: 2025/10/10 18:42:23 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/14 19:14:45 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int main()
 	delete wrongCat;
 
 	{
-		const int size = 100;
+		std::cout << std::endl << "======LOTS OF ANIMALS======" << std::endl;
+		const int size = 5;
 		Animal *animals[size];
 
 		for (size_t i = 0; i < size; i++)
@@ -52,12 +53,21 @@ int main()
 				animals[i] = new Dog();
 			else
 				animals[i] = new Cat();
-		}
-		for (size_t i = 0; i < size; i++)
-		{
 			animals[i]->makeSound();
-			delete animals[i];
 		}
+
+		for (size_t i = 0; i < size; i++)
+			delete animals[i];
+	}
+
+	{
+		Cat	*gatico = new Cat();
+		Cat	*otroGatico = new Cat();
+
+		gatico->makeSound();
+		*gatico = *otroGatico;
+		delete otroGatico;
+		delete gatico;
 	}
 
 	return 0;
