@@ -5,31 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 22:57:17 by dario             #+#    #+#             */
-/*   Updated: 2025/09/04 18:22:31 by dario            ###   ########.fr       */
+/*   Created: 2025/10/15 20:00:08 by dario             #+#    #+#             */
+/*   Updated: 2025/10/15 20:24:40 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsp.hpp"
-#include "Fixed.hpp"
-#include "Point.hpp"
+#include "include/ICharacter.hpp"
+#include "include/IMateriaSource.hpp"
+#include "include/Character.hpp"
+#include "include/MateriaSource.hpp"
+#include "include/AMateria.hpp"
+#include "include/Cure.hpp"
+#include "include/Ice.hpp"
 
-// Check with https://planetcalc.com/8108/
-
-int main(void)
+int	main(void)
 {
-	Point a(7, 7);
-	Point b(11, 1);
-	Point c(2, 2);
 
-	Point point(7, 6.9f);
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	std::cout << a.getX() << " " << a.getY() << std::endl;
-
-	if (bsp(a, b, c, point))
-		std::cout << "Dentro\n" << std::endl;
-	else
-		std::cout << "Fuera\n" << std::endl;
-
-	return (0);
+	ICharacter* me = new Character("me");
+	
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
+	ICharacter* bob = new Character("bob");
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
+	
+	return 0;
 }
+
+/*
+Expected output:
+	$> clang++ -W -Wall -Werror *.cpp
+	$> ./a.out | cat -e
+	* shoots an ice bolt at bob *$
+	* heals bob's wounds *$
+
+*/
