@@ -7,16 +7,16 @@
 class Brain
 {
 	public:
-	Brain(void);
-	Brain(const Brain &copy);
-	Brain operator=(const Brain &copy);
+		Brain(void);
+		Brain(const Brain &copy);
+		Brain operator=(const Brain &copy);
 
-	~Brain(void);
+		~Brain(void);
 
-	void	generateIdeas(void);
+		void	generateIdeas(void);
 
 	protected:
-	std::string	ideas[100];
+		std::string	ideas[100];
 };
 
 #endif

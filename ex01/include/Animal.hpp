@@ -9,17 +9,17 @@
 class Animal
 {
 	public:
-	Animal(void);
-	Animal(const Animal &copy);
-	Animal &operator=(const Animal &copy);
+		Animal(void);
+		Animal(const Animal &copy);
+		Animal &operator=(const Animal &copy);
 
-	virtual ~Animal(void);
+		virtual ~Animal(void);
 
-	std::string	getType() const;
-	virtual void makeSound() const;
+		std::string	getType() const;
+		virtual void makeSound() const;
 
 	protected:
-	std::string	type;
+		std::string	type;
 };
 
 #endif
