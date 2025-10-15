@@ -6,7 +6,7 @@
 #    By: dario <dario@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 18:40:53 by dario             #+#    #+#              #
-#    Updated: 2025/10/14 18:50:10 by dario            ###   ########.fr        #
+#    Updated: 2025/10/15 19:58:53 by dario            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	ex01
 
 MAKEFLAGS	+=	--no-print-directory
 
-CC			=	g++
+CC			=	c++
 CFLAGS		=	-std=c++98 -Wall -Wextra -Werror
 RM			=	rm -rf
 

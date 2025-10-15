@@ -6,23 +6,30 @@
 #    By: dario <dario@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 18:40:53 by dario             #+#    #+#              #
-#    Updated: 2025/10/14 18:33:46 by dario            ###   ########.fr        #
+#    Updated: 2025/10/15 19:58:41 by dario            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	cppmodules02
-
-NBR			=	3
+NAME		=	ex03
 
 MAKEFLAGS	+=	--no-print-directory
 
 CC			=	c++
 CFLAGS		=	-std=c++98 -Wall -Wextra -Werror
-RM			=	rm -f
-
-DIR			=	$(srcs/utils/, $(UTILS))ex0
+RM			=	rm -rf
 
 VALFLAGS	=	--tool=helgrind --tool=drd
+
+OBJ_DIR		=	obj/
+SRC_DIR		=	source/
+
+SRCS		=	main.cpp
+
+VPATH		=  $(SRC_DIR) $(addprefix $(SRC_DIR), \
+				source\
+				)
+
+OBJS		=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
 define SIGNATURE
       _                                 _
@@ -57,32 +64,28 @@ BG_WHITE	=	\033[47m
 
 all: $(NAME)
 
-NUMS := $(shell printf "%2d\n" $$(seq 0 $(NBR)))
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@printf "$(MAGENTA)All $(NAME) source files compiled ✅$(RST)\033[0K\r"
+	@echo "\n$(BG_GREEN)$(NAME) compiled!$(BG_RST)"
+	@echo "$(MAGENTA)$$SIGNATURE$(RST)"
 
-$(NAME):
-	@for i in $(NUMS); do \
-		printf "$(MAGENTA)Compiling $(DIR)$$i ✅$(RST)\033[0K\r"; \
-		make -C $(DIR)$$i > /dev/null; \
-	done
-	@printf "$(BG_GREEN)All exercises compiled ✅$(BG_RST)\n"
-
-%.o: %.cpp
+$(OBJ_DIR)%.o: %.cpp $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(MAGENTA)Compiling $< ✅$(RST)\033[0K\r"
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 clean:
-	@for i in $(NUMS); do \
-		printf "$(MAGENTA)Cleaning $(DIR)$$i 🧹$(RST)\033[0K\r"; \
-		make -C $(DIR)$$i clean > /dev/null; \
-	done
-	@printf "$(BG_GREEN)All exercises cleaned 🧹$(BG_RST)\n"
+	@echo "$(BG_BLUE)Cleaning...$(BG_RST)"
+	@$(RM) $(OBJ_DIR)
+	@echo "$(CYAN)$(NAME) objs cleaned!$(BG_RST)🧹"
 
 fclean: clean
-	@for i in $(NUMS); do \
-		printf "$(MAGENTA)Fully cleaning $(DIR)$$i 🧹$(RST)\033[0K\r"; \
-		make -C $(DIR)$$i fclean > /dev/null; \
-	done
-	@printf "$(BG_GREEN)All exercises fully cleaned 🧹$(BG_RST)\n"
+	@$(RM) $(NAME)
+	@echo "$(CYAN)$(NAME) fully cleaned!$(BG_RST)🧹"
+	@echo "$(BG_GREEN)All cleaned!$(BG_RST)"
 
 re: fclean all
 
