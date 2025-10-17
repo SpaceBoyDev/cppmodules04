@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:18:02 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 03:38:05 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:16:58 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ Cure::Cure() : AMateria("cure")
 
 Cure::Cure(const Cure &copy) : AMateria("cure")
 {
-	this->type = copy.getType();
+	this->_type = copy.getType();
 }
 
 Cure &Cure::operator=(const Cure &copy)
 {
 	if (this != &copy)
 	{
-		this->type = copy.getType();
+		this->_type = copy.getType();
 	}
 	return (*this);
 }

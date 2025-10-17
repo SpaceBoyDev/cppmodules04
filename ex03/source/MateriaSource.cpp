@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:18:34 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 03:45:02 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:16:54 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
+	(void)copy;
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
-	// TODO: insert return statement here
+	(void)copy;
+	return (*this);
 }
 
 MateriaSource::~MateriaSource() {}
@@ -40,5 +42,6 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
+	(void)type;
 	return NULL;
 }

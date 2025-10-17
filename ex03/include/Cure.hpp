@@ -6,14 +6,14 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:14:54 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 02:28:29 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 03:48:54 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
 # define CURE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Cure : public AMateria
 {

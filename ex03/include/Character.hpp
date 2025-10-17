@@ -6,14 +6,15 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:12:58 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 03:02:36 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 03:48:37 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include "ICharacter.hpp"
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 class Character : public ICharacter
 {

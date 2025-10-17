@@ -6,7 +6,7 @@
 #    By: dario <dario@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 18:40:53 by dario             #+#    #+#              #
-#    Updated: 2025/10/15 19:58:41 by dario            ###   ########.fr        #
+#    Updated: 2025/10/17 04:12:17 by dario            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ VALFLAGS	=	--tool=helgrind --tool=drd
 OBJ_DIR		=	obj/
 SRC_DIR		=	source/
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 VPATH		=  $(SRC_DIR) $(addprefix $(SRC_DIR), \
 				source\
