@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:17:47 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 16:16:24 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:44:58 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ Character::Character(const Character &copy)
 {
 	this->_name = copy.getName();
 	for (size_t i = 0; i < 4 ; i++)
-		this->_inventory[i] = copy._inventory[i];
+	{
+		if (copy._inventory[i])
+			this->_inventory[i] = copy._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
 }
 
 Character &Character::operator=(const Character &copy)
@@ -39,7 +44,10 @@ Character &Character::operator=(const Character &copy)
 		{
 			if (this->_inventory[i])
 				delete this->_inventory[i];
-			this->_inventory[i] = copy._inventory[i];
+			if (copy._inventory[i])
+				this->_inventory[i] = copy._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
 		}
 	}
 	return (*this);
@@ -70,7 +78,6 @@ void Character::equip(AMateria *m)
 			return ;
 		}
 	}
-	
 }
 
 void Character::unequip(int idx)

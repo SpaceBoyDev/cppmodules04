@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:18:34 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 16:19:53 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:45:46 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 {
 	for (size_t i = 0; i < 4 ; i++)
 	{
-		this->_templates[i] = copy._templates[i]->clone();
+		if (copy._templates[i])
+			this->_templates[i] = copy._templates[i]->clone();
+		else
+			this->_templates[i] = NULL;
 	}
 }
 
@@ -36,7 +39,10 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 		{
 			if (this->_templates[i])
 				delete this->_templates[i];
-			this->_templates[i] = copy._templates[i]->clone();
+			if (copy._templates[i])
+				this->_templates[i] = copy._templates[i]->clone();
+			else
+				this->_templates[i] = NULL;
 		}
 	}
 	return (*this);
@@ -71,5 +77,5 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 		if (this->_templates[i] && this->_templates[i]->getType() == type)
 			return (_templates[i]->clone());
 	}
-	return NULL;
+	return (NULL);
 }
