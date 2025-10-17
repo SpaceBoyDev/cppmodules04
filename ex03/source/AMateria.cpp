@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:21:29 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 04:19:22 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:24:44 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 AMateria::AMateria(std::string const &type) : _type(type)
 {}
+
+	AMateria::~AMateria(void)
+{
+}
 
 std::string const &AMateria::getType() const
 {

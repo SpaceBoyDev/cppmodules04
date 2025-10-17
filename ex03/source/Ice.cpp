@@ -6,11 +6,13 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:18:18 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 04:16:56 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:22:32 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Ice.hpp"
+#include "../include/ICharacter.hpp"
+
 
 Ice::Ice() : AMateria("ice")
 {}
