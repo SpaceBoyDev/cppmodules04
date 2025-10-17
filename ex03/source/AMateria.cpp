@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 20:14:54 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 02:28:29 by dario            ###   ########.fr       */
+/*   Created: 2025/10/16 21:21:29 by dario             #+#    #+#             */
+/*   Updated: 2025/10/17 02:19:49 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
-
+#include "../include/AMateria.hpp"
 #include "AMateria.hpp"
 
-class Cure : public AMateria
+AMateria::AMateria(std::string const &type)
 {
-	public:
-		Cure();
-		Cure(const Cure &copy);
-		Cure &operator=(const Cure &copy);
+}
 
-		~Cure();
+std::string const &AMateria::getType() const
+{
+	return (this->type);
+}
 
-		AMateria *clone() const;
-		void use(ICharacter &target) const;
-};
+AMateria *AMateria::clone() const
+{
+	return nullptr;
+}
 
-#endif
+void AMateria::use(ICharacter &target)
+{
+}
