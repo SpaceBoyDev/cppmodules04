@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:00:48 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 04:55:29 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:12:29 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class AMateria
 	public:
 		AMateria();
 		AMateria(std::string const &type);
+		AMateria(const AMateria &copy);
+		AMateria &operator=(const AMateria &copy);
+
 		virtual ~AMateria(void);
 
 		std::string const &getType() const; //Returns the materia type

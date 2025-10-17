@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:17:47 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 05:01:04 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:16:24 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,5 @@ void Character::use(int idx, ICharacter &target)
 	if (idx < 0 || idx > 4)
 		return ;
 	if (this->_inventory[idx])
-	{
 		this->_inventory[idx]->use(target);
-	}
 }

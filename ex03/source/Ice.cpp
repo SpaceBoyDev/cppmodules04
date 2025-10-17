@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:18:18 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 04:45:25 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:17:36 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@
 Ice::Ice() : AMateria("ice")
 {}
 
-Ice::Ice(const Ice &copy) : AMateria("ice")
-{
-	this->_type = copy.getType();
-}
+Ice::Ice(const Ice &copy) : AMateria(copy.getType())
+{}
 
 Ice &Ice::operator=(const Ice &copy)
 {
 	if (this != &copy)
-	{
 		this->_type = copy.getType();
-	}
 	return (*this);
 }
 
