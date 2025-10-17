@@ -6,15 +6,12 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:00:08 by dario             #+#    #+#             */
-/*   Updated: 2025/10/15 20:24:40 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 03:44:26 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ICharacter.hpp"
-#include "include/IMateriaSource.hpp"
 #include "include/Character.hpp"
 #include "include/MateriaSource.hpp"
-#include "include/AMateria.hpp"
 #include "include/Cure.hpp"
 #include "include/Ice.hpp"
 

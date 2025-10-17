@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:00:48 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 02:31:06 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 03:41:15 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <string>
 #include <iostream>
-#include <ICharacter.hpp>
+#include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
