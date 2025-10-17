@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:14:54 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 03:48:54 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:44:51 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cure : public AMateria
 		~Cure();
 
 		AMateria *clone() const;
-		void use(ICharacter &target) const;
+		void use(ICharacter &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:12:58 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 03:48:37 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:57:15 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Character : public ICharacter
 		Character(const Character &copy);
 
 		Character &operator=(const Character &copy);
+
+		~Character();
 
 		std::string const & getName() const;
 		void equip(AMateria* m);

@@ -6,7 +6,7 @@
 /*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:00:48 by dario             #+#    #+#             */
-/*   Updated: 2025/10/17 04:22:01 by dario            ###   ########.fr       */
+/*   Updated: 2025/10/17 04:55:29 by dario            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class AMateria
 	protected:
 		std::string	_type;
 	public:
+		AMateria();
 		AMateria(std::string const &type);
 		virtual ~AMateria(void);
 
