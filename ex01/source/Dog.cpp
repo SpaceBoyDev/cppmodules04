@@ -20,6 +20,7 @@ Dog Dog::operator=(const Dog &copy)
 	if (this != &copy)
 	{
 		this->type = copy.type;
+		delete brain;
 		brain = new Brain(*copy.brain);
 	}
 	return (*this);

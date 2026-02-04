@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: darmarti <darmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 22:57:17 by dario             #+#    #+#             */
-/*   Updated: 2025/10/14 19:14:45 by dario            ###   ########.fr       */
+/*   Updated: 2026/02/04 15:36:07 by darmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << std::endl << "======FREEING NORMAL ANIMALS======" << std::endl;
 	delete meta;
 	delete j;
 	delete i;
@@ -39,6 +40,7 @@ int main()
 	wrongCat->makeSound();
 	wrongMeta->makeSound();
 
+	std::cout << std::endl << "======FREEING WRONG ANIMALS======" << std::endl;
 	delete wrongMeta;
 	delete wrongCat;
 
@@ -55,12 +57,14 @@ int main()
 				animals[i] = new Cat();
 			animals[i]->makeSound();
 		}
-
+		
+		std::cout << std::endl << "======FREEING LOTS OF ANIMALS======" << std::endl;
 		for (size_t i = 0; i < size; i++)
 			delete animals[i];
 	}
 
 	{
+		std::cout << std::endl << "======TWO KITTIES======" << std::endl;
 		Cat	*gatico = new Cat();
 		Cat	*otroGatico = new Cat();
 
