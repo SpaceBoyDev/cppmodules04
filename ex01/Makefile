@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dario <dario@student.42.fr>                +#+  +:+       +#+         #
+#    By: darmarti <darmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 18:40:53 by dario             #+#    #+#              #
-#    Updated: 2025/10/15 19:58:53 by dario            ###   ########.fr        #
+#    Updated: 2026/02/04 15:28:42 by darmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ $(NAME): $(OBJS)
 	@echo "\n$(BG_GREEN)$(NAME) compiled!$(BG_RST)"
 	@echo "$(MAGENTA)$$SIGNATURE$(RST)"
 
-$(OBJ_DIR)%.o: %.cpp $(OBJ_DIR)
+$(OBJ_DIR)%.o: %.cpp | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(MAGENTA)Compiling $< ✅$(RST)\033[0K\r"
 
