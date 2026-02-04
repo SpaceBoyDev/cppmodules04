@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dario <dario@student.42.fr>                +#+  +:+       +#+        */
+/*   By: darmarti <darmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 22:57:17 by dario             #+#    #+#             */
-/*   Updated: 2025/10/14 19:12:46 by dario            ###   ########.fr       */
+/*   Updated: 2026/02/04 15:29:54 by darmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << std::endl << "======FREEING NORMAL ANIMALS======" << std::endl;
+
 	delete meta;
 	delete j;
 	delete i;
@@ -39,12 +41,9 @@ int main()
 	wrongCat->makeSound();
 	wrongMeta->makeSound();
 
+	std::cout << std::endl << "======FREEING WRONG ANIMALS======" << std::endl;
 	delete wrongMeta;
 	delete wrongCat;
-
-	{
-		
-	}
 
 	return 0;
 }
